@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f172a;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CONTAINER */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* TOP BAR */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 14px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid #334155;
+  font-size: clamp(12px, 3vw, 18px);
+   font-size: clamp(14px, 2.5vw, 20px);
+  font-weight: bold;
+  color: #38bdf8; /* bright blue for score text */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* BOARD */
+/* BOARD */
+.board {
+  width: 100%;
+  height: calc(100vh - 200px); /* default for mobile */
+  max-height: 600px;           /* desktop max height */
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  background: #020617;
+  border: 2px solid #334155;
+  border-radius: 14px;
+  display: grid;
+  padding: 2px;
+}
+
+/* OPTIONAL: desktop media query for better scaling */
+@media screen and (min-width: 769px) {
+  .board {
+    height: 600px; /* fixed height on desktop */
+  }
+}
+
+
+/* INDIVIDUAL BLOCKS */
+.block {
+  width: 100%;
+  height: 100%;
+}
+
+/* SNAKE */
+.snake {
+  background: #38bdf8;
+  border-radius: 4px;
+}
+
+/* FOOD */
+.food {
+  background: #f43f5e;
+  border-radius: 50%;
+}
+
+/* START OVERLAY */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.782);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  text-align: center;
+}
+
+#overlay h1 {
+  font-size: clamp(26px, 6vw, 44px);
+  color: #38bdf8;
+}
+
+#overlay button {
+  padding: 10px 26px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: clamp(14px, 4vw, 18px);
+  background-color: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+}
+img {
+  width: 50%;     /* 50% of parent container */
+  max-width: 300px; /* maximum size */
+  height: auto;   /* keep aspect ratio */
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* MOBILE CONTROLS */
+.controls {
+  display: none; /* hidden by default, only visible on mobile */
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.controls .row {
+  display: flex;
+  gap: 8px;
+}
+
+.controls button {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #334155;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.controls button:active {
+  background-color: #38bdf8;
+  color: #020617;
+}
+
+/* SHOW MOBILE BUTTONS ON SMALL SCREENS */
+@media screen and (max-width: 768px) {
+  .controls {
+    display: flex;
+  }
+}
+
+/* FULLSCREEN GAME OVER */
+/* FULLSCREEN GAME OVER */
+#gameOverOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  display: none; 
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-size: clamp(18px, 4vw, 32px);
+  text-align: center;
+  color: #fff; /* default white */
+}
+
+#gameOverOverlay #gameOverText div {
+  margin: 6px 0;
+  font-weight: bold;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+#gameOverOverlay #gameOverText div:nth-child(1) {
+  color: #f43f5e; /* Game Over title in red */
+  font-size: clamp(22px, 5vw, 36px);
+}
+
+#gameOverOverlay #gameOverText div:nth-child(2) {
+  color: #38bdf8; /* Your Score in blue */
+}
+
+#gameOverOverlay #gameOverText div:nth-child(3) {
+  color: #facc15; /* High Score in yellow */
+}
+
+
+#gameOverOverlay button {
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  background-color: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  font-size: clamp(16px, 4vw, 20px);
+  cursor: pointer;
+}
