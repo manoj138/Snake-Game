@@ -154,7 +154,7 @@ function startGame() {
     if (time <= 0) gameOver("Time over");
   }, 1000);
 
-  timerSlot = setInterval(showSnake, 120);
+  timerSlot = setInterval(showSnake, 170);
 
   audioElement.play().catch(() => {});
 }
