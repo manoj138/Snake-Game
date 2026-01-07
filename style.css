@@ -14,7 +14,6 @@ body {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding-top: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -120,7 +119,7 @@ img {
 .controls {
   display: none; /* hidden by default, only visible on mobile */
   flex-direction: column;
-  gap: 8px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
  
@@ -128,7 +127,7 @@ img {
 
 .controls .row {
   display: flex;
-  gap: 8px;
+  gap: 20px;
 }
 
 .controls button {
@@ -137,7 +136,7 @@ img {
   border: none;
   background-color: #334155;
   color: #fff;
-  font-size: 18px;
+  font-size: 28px;
   cursor: pointer;
 }
 
